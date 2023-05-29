@@ -8,6 +8,14 @@
   html {
     font-family: "Rubik", sans-serif;
   }
+
+  body {
+    @apply dark:bg-gray-900;
+  }
+
+  body * {
+    @apply transition-colors duration-200 ease-linear delay-75;
+  }
 }
 
 @layer components {
@@ -16,11 +24,11 @@
   }
 
   .subtitle {
-    @apply text-2xl font-medium text-gray-700 uppercase;
+    @apply text-2xl font-medium text-gray-700 uppercase dark:text-gray-300;
   }
 
   .text-container {
-    @apply flex w-full appearance-none px-4 py-4 rounded-md focus:outline-none resize-none overflow-y-auto focus:ring-transparent focus:border-transparent text-4xl placeholder:text-gray-400 text-sky-900 mt-8;
+    @apply flex w-full appearance-none px-4 py-4 rounded-md focus:outline-none resize-none overflow-y-auto focus:ring-transparent focus:border-transparent text-4xl bg-gray-100 placeholder:text-gray-400 text-sky-900 mt-8 dark:text-gray-300 dark:placeholder-gray-500 dark:bg-gray-800;
   }
 
   .btn {
