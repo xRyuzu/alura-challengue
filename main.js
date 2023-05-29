@@ -17,17 +17,27 @@ const encrypt = (text) => {
 const input = document.querySelector("#input");
 const output = document.querySelector("#output");
 const copyBtn = document.querySelector("#copy");
+const clearBtn = document.querySelector("#clear");
+
+clearBtn.addEventListener("click", () => {
+  input.value = "";
+  output.value = "";
+  copyBtn.disabled = true;
+  clearBtn.disabled = true;
+});
 
 input.addEventListener("keyup", (e) => {
   const value = e.target.value;
   if (value === undefined || value === null || value.trim() == "") {
-    output.textContent = "";
+    output.value = "";
     copyBtn.disabled = true;
+    clearBtn.disabled = true;
     return;
   }
 
-  output.textContent = encrypt(value);
+  output.value = encrypt(value);
   copyBtn.disabled = false;
+  clearBtn.disabled = false;
 });
 
 copyBtn.addEventListener("click", () => {
