@@ -1,16 +1,10 @@
 const translations = {};
 
-/* JSON STRUCTURE from lang.json
-{
-  "text_to_encrypt_decrypt": {
-    "en": "Text to encrypt/decrypt",
-    "es": "Texto a encriptar/desencriptar",
-    "br": "Texto a criptografar/descriptografar"
-  },
-*/
+const URL =
+  "https://raw.githubusercontent.com/xRyuzu/alura-challengue/master/lang.json";
 
 function loadTranslations() {
-  fetch("./translations/lang.json")
+  fetch(URL)
     .then((response) => response.json())
     .then((data) => {
       Object.assign(translations, data);
