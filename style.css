@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Rubik", sans-serif;
+  }
+}
+
+@layer components {
+  .layout {
+    @apply grid lg:grid-cols-2 grid-cols-1 items-center mt-24 gap-x-4 lg:gap-y-0 gap-y-8;
+  }
+  .text-container {
+    @apply flex w-full appearance-none px-4 py-4 rounded-md focus:outline-none resize-none overflow-y-auto focus:ring-transparent focus:border-transparent text-4xl placeholder:text-gray-400 text-sky-900 mt-8;
+  }
+
+  .btn {
+    @apply px-4 py-3 flex w-full justify-center bg-blue-900 font-medium text-white rounded-md hover:bg-blue-800;
+  }
+}
