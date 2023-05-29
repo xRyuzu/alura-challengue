@@ -10,37 +10,31 @@ const encrypt = (str) => {
 
 const input = document.querySelector("#input");
 const output = document.querySelector("#output");
+const copyBtn = document.querySelector("#copy");
 
 input.addEventListener("keyup", (e) => {
   const value = e.target.value;
-  const output = document.querySelector("#output");
+  if (value === undefined || value === null || value.trim() == "") {
+    output.textContent = "";
+    copyBtn.disabled = true;
+    return;
+  }
+
   output.textContent = encrypt(value);
+  copyBtn.disabled = false;
 });
 
-// clering input field
-const clearInput = document.querySelector("#clear-input");
-const clearOutput = document.querySelector("#clear-output");
-
-clearInput.addEventListener("click", () => {
-  input.value = "";
-});
-
-clearOutput.addEventListener("click", () => {
-  output.value = "";
-});
-
-// copy to clipboard
-output.addEventListener("click", () => {
+copyBtn.addEventListener("click", () => {
   const text = output.value;
 
-  if (text === "") return;
+  if (text === undefined || text === null || text.trim() == "") return;
 
   navigator.clipboard.writeText(text);
   Swal.fire({
     toast: true,
     icon: "success",
-    title: "Copiado al portapapeles",
-    animation: false,
+    title: "Texto copiado al portapapeles",
+    animation: true,
     position: "top-end",
     showConfirmButton: false,
     timer: 3000,
