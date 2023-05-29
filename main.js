@@ -1,11 +1,17 @@
 import "./style.css";
 import Swal from "sweetalert2";
 
-const encrypt = (str) => {
-  return str
-    .split("")
-    .map((char) => char.charCodeAt(0))
-    .join("");
+const encrypt = (text) => {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const alphabetArray = alphabet.split("");
+  const textArray = text.split("");
+  const encryptedArray = textArray.map((letter) => {
+    const index = alphabetArray.indexOf(letter);
+    if (index === -1) return letter;
+    const newIndex = (index + 13) % 26;
+    return alphabetArray[newIndex];
+  });
+  return encryptedArray.join("");
 };
 
 const input = document.querySelector("#input");
