@@ -1,18 +1,8 @@
 import "./style.css";
 import Swal from "sweetalert2";
-
-const encrypt = (text) => {
-  const alphabet = "abcdefghijklmnopqrstuvwxyz";
-  const alphabetArray = alphabet.split("");
-  const textArray = text.split("");
-  const encryptedArray = textArray.map((letter) => {
-    const index = alphabetArray.indexOf(letter);
-    if (index === -1) return letter;
-    const newIndex = (index + 13) % 26;
-    return alphabetArray[newIndex];
-  });
-  return encryptedArray.join("");
-};
+import { hash } from "./hash.js";
+import { themeCheck } from "./theme.js";
+import { changeLanguage } from "./translation.js";
 
 const input = document.querySelector("#input");
 const output = document.querySelector("#output");
@@ -35,7 +25,7 @@ input.addEventListener("keyup", (e) => {
     return;
   }
 
-  output.value = encrypt(value);
+  output.value = hash(value);
   copyBtn.disabled = false;
   clearBtn.disabled = false;
 });
@@ -62,43 +52,5 @@ copyBtn.addEventListener("click", () => {
   });
 });
 
-const sun = document.querySelector("#sun");
-const moon = document.querySelector("#moon");
-
-const userTheme = localStorage.getItem("theme");
-const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-const iconToggle = () => {
-  moon.classList.toggle("hidden");
-  sun.classList.toggle("hidden");
-};
-
-const themeCheck = () => {
-  if (userTheme === "dark" || (userTheme === null && systemTheme)) {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-    sun.classList.remove("hidden");
-    return;
-  }
-
-  localStorage.setItem("theme", "light");
-  moon.classList.remove("hidden");
-};
-
-const themeSwitch = () => {
-  if (document.documentElement.classList.contains("dark")) {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-    iconToggle();
-    return;
-  }
-
-  document.documentElement.classList.add("dark");
-  localStorage.setItem("theme", "dark");
-  iconToggle();
-};
-
-sun.addEventListener("click", themeSwitch);
-moon.addEventListener("click", themeSwitch);
-
 themeCheck();
+changeLanguage("en");

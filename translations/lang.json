@@ -1,0 +1,47 @@
+{
+  "text_to_encrypt_decrypt": {
+    "en": "Text to encrypt/decrypt",
+    "es": "Texto a encriptar/desencriptar",
+    "br": "Texto a criptografar/descriptografar"
+  },
+  "input_placeholder": {
+    "en": "Enter some text to start",
+    "es": "Ingresa algún texto para comenzar",
+    "br": "Ingrese algum texto para começar"
+  },
+  "encrypt_decrypt_button": {
+    "en": "Encrypt/Decrypt text",
+    "es": "Encriptar/Desencriptar texto",
+    "br": "Criptografar/Descriptografar texto"
+  },
+  "clear_input_button": {
+    "en": "Clear input",
+    "es": "Limpiar entrada",
+    "br": "Limpar entrada"
+  },
+  "result": {
+    "en": "Result",
+    "es": "Resultado",
+    "br": "Resultado"
+  },
+  "output_placeholder": {
+    "en": "Processed text will be shown here",
+    "es": "Aquí se mostrará el texto procesado",
+    "br": "O texto processado será mostrado aqui"
+  },
+  "copy_to_clipboard_button": {
+    "en": "Copy to clipboard",
+    "es": "Copiar al portapapeles",
+    "br": "Copiar para a área de transferência"
+  },
+  "made_with_love": {
+    "en": "Made with",
+    "es": "Hecho con",
+    "br": "Feito com"
+  },
+  "by": {
+    "en": "by",
+    "es": "por",
+    "br": "por"
+  }
+}
