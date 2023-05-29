@@ -1,10 +1,10 @@
 const translations = {};
 
-const URL =
-  "https://raw.githubusercontent.com/xRyuzu/alura-challengue/master/lang.json";
+//const URL =
+("https://raw.githubusercontent.com/xRyuzu/alura-challengue/master/lang.json");
 
 function loadTranslations() {
-  fetch(URL)
+  fetch("./translations/lang.json")
     .then((response) => response.json())
     .then((data) => {
       Object.assign(translations, data);

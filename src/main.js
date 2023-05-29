@@ -1,4 +1,4 @@
-import "./style.css";
+import "./../style.css";
 import Swal from "sweetalert2";
 import { hash } from "./hash.js";
 import { themeCheck } from "./theme.js";
